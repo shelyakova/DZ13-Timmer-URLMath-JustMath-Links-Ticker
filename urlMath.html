@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<meta charset>
+		<title>URL Math</title>
+		<style>
+			.box {
+				width: 350px;
+				height: 200px;
+				background: #8bbcb3;
+				position: relative;
+				top: 20%;
+				left: 35%;
+				color: white;
+				font-size: 20px;
+				text-align: center;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "box">
+			<p>Введите в строку запрос по типу: <br><b>?a=100&b=200</b></p>
+			<p>Сумма этих чисел:</p>
+			<p id = "result"></p>
+		</div>
+		
+		<script>
+			var info = document.location.search.slice(1),
+				array = info.split('&'),
+				a = array[0].split('='),
+				b = array[1].split('='),
+				result = (+a[1])+(+b[1]);
+			
+			document.getElementById("result").innerHTML = "<h1>" + result + "</h1>";
+		</script>
+	</body>
+</html>

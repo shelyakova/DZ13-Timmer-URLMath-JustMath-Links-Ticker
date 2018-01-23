@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<meta charset>
+		<title>Link Task</title>
+		
+		<style>
+			body {
+				background: #efcb9c;
+			}
+			
+			.box {
+				width: 170px;
+				height: 110px;
+				background: white;
+				position: relative;
+				top: 20%;
+				left: 40%;
+				padding: 10px;
+			}
+			
+			p {
+				margin: 10px;
+				font-size: 20px;
+				color: #5c5c5c;
+			}
+		</style>
+	</head>
+	<body>
+	<div class = "box">
+		<p><a id = "linkOne">JS Task №1</a></p>
+		<p><a id = "linkTwo">JS Task №2</a></p>
+		<p><a id = "linkTree">JS Task №3</a></p>
+	</div>
+	
+	<script>
+		window.onload = function () {
+            var flag1 = false;
+            var flag2 = false;
+            var flag3 = false;
+            var a1, a2, a3;
+			
+			
+            document.getElementById("linkOne").onclick = function () {
+                if (flag1 === false) openLinkOne();
+                else closeLinkOne();
+            };
+            document.getElementById("linkTwo").onclick = function () {
+                if (flag2 === false) openLinkTwo();
+                else closeLinkTwo();
+            };
+            document.getElementById("linkTree").onclick = function () {
+                if (flag3 === false) openLinkTree();
+                else closeLinkTree();
+            };
+			
+			
+            function openLinkOne( ) {
+                flag1 = true;
+                a1 = window.open("Timmer/timmer.html", "Timmer", 
+				"width=400, height=400, status=yes, resizable=no");
+                document.getElementById("linkOne").innerHTML = "JS Task №1(open)";
+            }
+            function closeLinkOne() {
+               flag1 = false;
+                a1.close();
+                document.getElementById("linkOne").innerHTML = "JS Task №1";
+            }
+			
+			
+            function openLinkTwo( ) {
+                flag2 = true;
+                a2 = window.open("urlMath.html", "URL Math", 
+				"width=400, height=400, status=yes, resizable=no");
+                document.getElementById("linkTwo").innerHTML = "JS Task №2(open)";
+            }
+            function closeLinkTwo() {
+               flag2 = false;
+                a2.close();
+                document.getElementById("linkTwo").innerHTML = "JS Task №2";
+            }
+			
+			
+            function openLinkTree( ) {
+                flag3 = true;
+                a3 = window.open("justMath.html", "Just Math", 
+				"width=400, height=400, status=yes, resizable=no");
+                document.getElementById("linkTree").innerHTML = "JS Task №3(open)";
+            }
+            function closeLinkTree() {
+               flag3 = false;
+                a3.close();
+                document.getElementById("linkTree").innerHTML = "JS Task №3";
+            }
+        }
+	</script>
+	</body>
+</html
